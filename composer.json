@@ -4,5 +4,10 @@
     },
     "require": {
         "php-curl-class/php-curl-class": "^4.8"
+    },
+    "autoload": {
+      "classmap": [
+        "./src/"
+      ]
     }
 }
