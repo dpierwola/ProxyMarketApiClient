@@ -412,7 +412,7 @@ return array(
     'ProxyMarketApi\\Exceptions\\InvalidApiKey' => $baseDir . '/src/Exceptions/InvalidApiKey.php',
     'ProxyMarketApi\\Exceptions\\InvalidApiRequest' => $baseDir . '/src/Exceptions/InvalidApiRequest.php',
     'ProxyMarketApi\\Exceptions\\InvalidApiResponse' => $baseDir . '/src/Exceptions/InvalidApiResponse.php',
-    'ProxyMarketApi\\Proxy' => $baseDir . '/src/Proxy.php',
+    'ProxyMarketApi\\Proxy' => $baseDir . '/src/Proxy/Proxy.php',
     'ProxyMarketApi\\ProxyMarketApi' => $baseDir . '/src/ProxyMarketApi.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',

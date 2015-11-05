@@ -17,14 +17,23 @@ class Proxy {
         $this->port = $port;
     }
 
+    /**
+     * @return string
+     */
     public function getIp() {
         return $this->ip;
     }
 
+    /**
+     * @return int
+     */
     public function getPort() {
         return $this->port;
     }
 
+    /**
+     * @return string
+     */
     public function __toString() {
         return sprintf("%s:%s", $this->ip, $this->port);
     }
