@@ -18,9 +18,9 @@ class IpValidator extends \ProxyMarketApi\Base\Validators {
      */
     public function valid($ip)
     {
-        if(filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) !== false) {
-            throw new InvalidIpException(sprintf("Ip: %s is invalid!"), $ip);
+        if (!filter_var($ip, FILTER_VALIDATE_IP) === false) {
+            return true;
         }
-        return true;
+        throw new InvalidIpException(sprintf("Ip: %s is invalid!", $ip));
     }
 }
