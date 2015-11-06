@@ -421,7 +421,6 @@ return array(
     'ProxyMarketApi\\Proxy\\Validators\\IpValidator' => $baseDir . '/src/Proxy/Validators/IpValidator.php',
     'ProxyMarketApi\\Tests\\IpPortValidatorTest' => $baseDir . '/test/Proxy/Validators/IpPortValidatorTest.php',
     'ProxyMarketApi\\Tests\\IpValidatorTest' => $baseDir . '/test/Proxy/Validators/IpValidatorTest.php',
-    'ProxyMarketApi\\Tests\\ProxyTest' => $baseDir . '/test/ProxyTest.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',
