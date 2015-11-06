@@ -6,7 +6,7 @@
  * Time: 22:57
  */
 
-namespace ProxyMarketApi\Tests;
+namespace ProxyMarketApi\Tests\Proxy\Validators;
 use \ProxyMarketApi\Proxy\Validators\IpValidator;
 
 include dirname(__FILE__) . '/../../../vendor/autoload.php';

@@ -5,7 +5,7 @@
  * Date: 06.11.15
  * Time: 15:18
  */
-namespace ProxyMarketApi\Tests;
+namespace ProxyMarketApi\Tests\Proxy\Validators;
 
 include dirname(__FILE__) . '/../../../vendor/autoload.php';
 use \ProxyMarketApi\Proxy\Exceptions\InvalidIpPortException;
