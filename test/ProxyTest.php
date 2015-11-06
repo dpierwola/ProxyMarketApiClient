@@ -8,9 +8,7 @@
 
 namespace ProxyMarketApi\Tests;
 
-
-
-use ProxyMarketApi\Proxy;
+use ProxyMarketApi\Proxy\Proxy;
 
 include '../vendor/autoload.php';
 

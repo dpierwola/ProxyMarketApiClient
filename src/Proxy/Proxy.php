@@ -6,15 +6,39 @@
  * Time: 21:29
  */
 
-namespace ProxyMarketApi;
+namespace ProxyMarketApi\Proxy;
+
+use ProxyMarketApi\Proxy\Validators\IpValidator;
+use ProxyMarketApi\Proxy\Validators\IpPortValidator;
+
 
 class Proxy {
-    protected $ip;
-    protected $port;
+    protected $ip = null;
+    protected $port = null;
 
-    public function __construct($ip, $port = 8080) {
-        $this->ip = $ip;
-        $this->port = $port;
+    public function __construct($ip, $port = 80) {
+        $this->setIp($ip);
+        $this->setIpPort($port);
+    }
+
+    /**
+     * @param $ip
+     * @throws Exceptions\InvalidIpException
+     */
+    protected function setIp($ip) {
+        if((new IpValidator())->valid($ip)) {
+            $this->ip = $ip;
+        }
+    }
+
+    /**
+     * @param $port
+     * @throws Exceptions\InvalidIpPortException
+     */
+    protected function setIpPort($port) {
+        if((new IpPortValidator())->valid($port)) {
+            $this->port = $port;
+        }
     }
 
     /**
