@@ -9,8 +9,6 @@
 namespace ProxyMarketApi\Tests\Proxy\Validators;
 use \ProxyMarketApi\Proxy\Validators\IpValidator;
 
-include dirname(__FILE__) . '/../../../vendor/autoload.php';
-
 class IpValidatorTest extends \PHPUnit_Framework_TestCase {
     /**
      * @dataProvider ipDataProvider

@@ -11,8 +11,6 @@ namespace ProxyMarketApi\Tests\Proxy;
 use ProxyMarketApi\Proxy\Proxy;
 use ProxyMarketApi\Proxy\Validators\IpPortValidator;
 
-include dirname(__FILE__) . '/../../vendor/autoload.php';
-
 class ProxyTest extends \PHPUnit_Framework_TestCase {
     /**
      * @dataProvider getProxiesObjects

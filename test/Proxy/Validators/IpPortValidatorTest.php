@@ -7,7 +7,6 @@
  */
 namespace ProxyMarketApi\Tests\Proxy\Validators;
 
-include dirname(__FILE__) . '/../../../vendor/autoload.php';
 use \ProxyMarketApi\Proxy\Exceptions\InvalidIpPortException;
 use \ProxyMarketApi\Proxy\Validators\IpPortValidator;
 
