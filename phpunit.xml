@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./vendor/autoload.php">
+    <testsuites>
+        <testsuite name="ProxyTest">
+            <file>test/Proxy/Validators/IpPortValidatorTest.php</file>
+            <file>test/Proxy/Validators/IpValidatorTest.php</file>
+            <file>test/Proxy/ProxyTest.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>
