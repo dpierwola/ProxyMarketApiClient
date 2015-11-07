@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: macbookpro15
+ * User: dpierwola
  * Date: 06.11.15
  * Time: 23:24
  */
