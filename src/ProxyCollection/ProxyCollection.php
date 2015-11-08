@@ -28,11 +28,19 @@ class ProxyCollection {
     }
 
     /**
+     * @return int
+     */
+    public function getNumberOfElements() {
+        return $this->sizeOfCollection;
+    }
+
+    /**
      * Append Proxy object to collection and increment sizeOfCollection flag
      * @param \ProxyMarketApi\Proxy\Proxy $proxyObject
      */
     public function push(\ProxyMarketApi\Proxy\Proxy $proxyObject) {
         $this->sizeOfCollection = array_push($this->proxyCollection, $proxyObject);
+        return $this;
     }
 
     /**

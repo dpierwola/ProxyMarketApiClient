@@ -6,5 +6,8 @@
             <file>test/Proxy/Validators/IpValidatorTest.php</file>
             <file>test/Proxy/ProxyTest.php</file>
         </testsuite>
+        <testsuite name="ProxyCollectionTest">
+            <file>test/ProxyCollection/ProxyCollectionTest.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>
