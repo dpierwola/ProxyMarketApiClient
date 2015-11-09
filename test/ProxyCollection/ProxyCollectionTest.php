@@ -76,6 +76,47 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
+     * FindProxyObjectsByIp test method
+     */
+    public function testFindProxyObjectsByIp() {
+        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByIp('127.0.0.1'));
+        $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByIp(''));
+
+        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $this->assertEquals(1, count($proxyCollectionObject->findProxyObjectsByIp('127.0.0.1')));
+        $this->assertEquals('127.0.0.1', $proxyCollectionObject->findProxyObjectsByIp('127.0.0.1')[0]->getIp());
+
+        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $this->assertEquals(2, count($proxyCollectionObject->findProxyObjectsByIp('127.0.0.1')));
+        $this->assertEquals('127.0.0.1', $proxyCollectionObject->findProxyObjectsByIp('127.0.0.1')[1]->getIp());
+    }
+
+    /**
+     * FindProxyObjectsByPort test method
+     */
+    public function testFindProxyObjectsByPort() {
+        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByPort(80));
+        $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByIp(''));
+        $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByIp('80'));
+
+        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $this->assertEquals(1, count($proxyCollectionObject->findProxyObjectsByPort('80')));
+        $this->assertEquals(1, count($proxyCollectionObject->findProxyObjectsByPort(80)));
+        $this->assertEquals(80, $proxyCollectionObject->findProxyObjectsByPort(80)[0]->getPort());
+        $this->assertEquals('80', $proxyCollectionObject->findProxyObjectsByPort('80')[0]->getPort());
+
+        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1', 80));
+        $this->assertEquals(2, count($proxyCollectionObject->findProxyObjectsByPort('80')));
+        $this->assertEquals(2, count($proxyCollectionObject->findProxyObjectsByPort(80)));
+        $this->assertEquals(80, $proxyCollectionObject->findProxyObjectsByPort(80)[1]->getPort());
+
+        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1', 8081));
+        $this->assertEquals(1, count($proxyCollectionObject->findProxyObjectsByPort('8081')));
+    }
+
+    /**
      * @return array
      */
     public static function getProxyCollectionObjects() {
