@@ -64,30 +64,27 @@ class ProxyCollection {
     }
 
     /**
-     * @param string $ip
+     * @param $ip
      * @return array
      */
     public function findProxyObjectsByIp($ip) {
-        $foundProxyObjects = array();
-        foreach($this->proxyCollection as $proxyObject) {
+        return array_filter($this->proxyCollection, function($proxyObject) use ($ip) {
             if($proxyObject->getIp() == $ip) {
-                array_push($foundProxyObjects, $proxyObject);
+                return $proxyObject;
             }
-        }
-        return $foundProxyObjects;
+        });
     }
 
     /**
-     * @param int $ipPort
+     * @param $port
      * @return array
      */
-    public function findProxyObjectsByIpPort($ipPort) {
-        $foundProxyObjects = array();
-        foreach($this->proxyCollection as $proxyObject) {
-            if($proxyObject->getPort() == $ipPort) {
-                array_push($foundProxyObjects, $proxyObject);
+    public function findProxyObjectsByPort($port) {
+        return array_filter($this->proxyCollection, function($proxyObject) use ($port) {
+            if($proxyObject->getPort() == $port) {
+                return $proxyObject;
             }
-        }
-        return $foundProxyObjects;
+        });
     }
+
 }

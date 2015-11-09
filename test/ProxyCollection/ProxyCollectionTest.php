@@ -74,7 +74,7 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
         $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
         $this->assertEquals(1, count($proxyCollectionObject->getCollection()));
     }
-    
+
     /**
      * @return array
      */
