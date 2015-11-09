@@ -26,6 +26,25 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($expectedValue, $proxyCollection->isEmpty());
     }
 
+    /**
+     * Test diffrent case in getNumberOfElements method
+     */
+    public function testGetNumberOfElements() {
+        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $this->assertEquals(0, $proxyCollectionObject->getNumberOfElements());
+
+        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $this->assertEquals(1, $proxyCollectionObject->getNumberOfElements());
+
+        $proxyCollectionObject->pop();
+        $this->assertEquals(0, $proxyCollectionObject->getNumberOfElements());
+
+        for($i = 0; $i < 10; $i++) {
+            $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('192.168.1.23'));
+        }
+        $this->assertEquals(10, $proxyCollectionObject->getNumberOfElements());
+    }
+
 
     /**
      * @return array
