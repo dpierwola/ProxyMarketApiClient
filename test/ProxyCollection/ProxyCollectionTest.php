@@ -45,7 +45,36 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(10, $proxyCollectionObject->getNumberOfElements());
     }
 
+    /**
+     * Push and Pop test methods
+     */
+    public function testPushAndPop() {
+        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $this->assertFalse($proxyCollectionObject->pop());
+        $this->assertEquals(0, $proxyCollectionObject->getNumberOfElements());
 
+        $proxyCollectionObject->push(new ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $this->assertEquals(1, $proxyCollectionObject->getNumberOfElements());
+
+        $proxyObject = $proxyCollectionObject->pop();
+        $this->assertEquals(0, $proxyCollectionObject->getNumberOfElements());
+        $this->assertEquals('127.0.0.1', $proxyObject->getIp());
+
+        $this->assertFalse($proxyCollectionObject->pop());
+    }
+
+    /**
+     * GetCollection test method
+     */
+    public function testGetCollection() {
+        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $this->assertEquals(array(), $proxyCollectionObject->getCollection());
+        $this->assertEquals(0, count($proxyCollectionObject->getCollection()));
+
+        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $this->assertEquals(1, count($proxyCollectionObject->getCollection()));
+    }
+    
     /**
      * @return array
      */
