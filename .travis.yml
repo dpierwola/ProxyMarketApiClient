@@ -10,6 +10,7 @@ php:
 sudo: false
 
 before_install:
+  - composer install
   - composer self-update
 
 script:
