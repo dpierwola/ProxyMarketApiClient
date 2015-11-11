@@ -14,7 +14,7 @@ use Curl\Curl;
 use ClientProxyMarketApi\Exceptions\InvalidApiKey;
 use ClientProxyMarketApi\Exceptions\InvalidApiRequest;
 
-class ProxyMarketApi {
+class ClientProxyMarketApi {
     /**
      * @const PROXY_MARKER_API_URL
      */
@@ -69,8 +69,11 @@ class ProxyMarketApi {
         if((new ApiResponseValidator())->valid($this->_curlObject->response)) {
             $proxyRows = explode("\n", $this->_curlObject->response);
             foreach($proxyRows as $row) {
-                list($ip, $port) = explode(':', $row);
-                $this->proxyCollection->push(new Proxy\Proxy($ip, (int)$port));
+                $proxyPart = explode(':', $row);
+                if(count($proxyPart) == 2) {
+                    list($ip, $port) = $proxyPart;
+                    $this->proxyCollection->push(new Proxy\Proxy($ip, (int)$port));
+                }
             }
 
             return $this->proxyCollection;

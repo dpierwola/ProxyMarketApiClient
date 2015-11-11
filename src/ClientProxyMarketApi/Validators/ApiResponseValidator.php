@@ -23,7 +23,7 @@ class ApiResponseValidator extends \ClientProxyMarketApi\Base\Validators {
      */
     function valid($value)
     {
-        if((bool)!preg_match(self::INVALID_RESPONSE_PATTERN, $value)) {
+        if((bool)preg_match(self::INVALID_RESPONSE_PATTERN, $value)) {
             throw new InvalidApiResponse($value);
         }
         return true;
