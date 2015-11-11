@@ -8,6 +8,5 @@
 
 namespace ClientProxyMarketApi\Exceptions;
 
-
 class InvalidApiResponse extends \Exception {
 }
