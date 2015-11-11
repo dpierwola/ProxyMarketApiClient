@@ -1,17 +1,16 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: macbookpro15
+ * User: dpierwola
  * Date: 02.11.15
  * Time: 23:50
  */
-namespace ProxyMarketApi;
-
+namespace ClientProxyMarketApi;
 
 use Curl\Curl;
-use ProxyMarketApi\Exceptions\InvalidApiKey;
-use ProxyMarketApi\Exceptions\InvalidApiRequest;
-use ProxyMarketApi\Exceptions\InvalidApiResponse;
+use ClientProxyMarketApi\Exceptions\InvalidApiKey;
+use ClientProxyMarketApi\Exceptions\InvalidApiRequest;
+use ClientProxyMarketApi\Exceptions\InvalidApiResponse;
 
 class ProxyMarketApi {
     const PROXY_MARKER_API_URL = 'http://www.proxymarket.pl/api/getanonim/';

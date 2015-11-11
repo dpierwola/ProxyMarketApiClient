@@ -6,7 +6,7 @@
  * Time: 15:39
  */
 
-namespace ProxyMarketApi\ProxyCollection;
+namespace ClientProxyMarketApi\ProxyCollection;
 
 class ProxyCollection {
     /**
@@ -36,16 +36,16 @@ class ProxyCollection {
 
     /**
      * Append Proxy object to collection and increment sizeOfCollection flag
-     * @param \ProxyMarketApi\Proxy\Proxy $proxyObject
+     * @param \ClientProxyMarketApi\Proxy\Proxy $proxyObject
      */
-    public function push(\ProxyMarketApi\Proxy\Proxy $proxyObject) {
+    public function push(\ClientProxyMarketApi\Proxy\Proxy $proxyObject) {
         $this->sizeOfCollection = array_push($this->proxyCollection, $proxyObject);
         return $this;
     }
 
     /**
      * Get last Proxy object from collection and decrement sizeOfCollection flag
-     * @return bool | \ProxyMarketApi\Proxy\Proxy
+     * @return bool | \ClientProxyMarketApi\Proxy\Proxy
      */
     public function pop() {
         if(!$this->isEmpty()) {

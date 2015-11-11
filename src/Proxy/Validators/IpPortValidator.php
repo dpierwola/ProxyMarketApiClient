@@ -6,11 +6,11 @@
  * Time: 21:14
  */
 
-namespace ProxyMarketApi\Proxy\Validators;
+namespace ClientProxyMarketApi\Proxy\Validators;
 
-use ProxyMarketApi\Proxy\Exceptions\InvalidIpPortException;
+use ClientProxyMarketApi\Proxy\Exceptions\InvalidIpPortException;
 
-class IpPortValidator extends \ProxyMarketApi\Base\Validators {
+class IpPortValidator extends \ClientProxyMarketApi\Base\Validators {
     /**
      * @const int MIN_RANGE_IP_PORT
      */

@@ -12,17 +12,17 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
      * Test create empty object and check properties
      */
     public function testCreateProxyCollectionObject() {
-        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $proxyCollectionObject = new \ClientProxyMarketApi\ProxyCollection\ProxyCollection();
         $this->isEmpty($proxyCollectionObject->getCollection());
         $this->assertFalse($proxyCollectionObject->pop());
     }
 
     /**
      * @dataProvider getProxyCollectionObjects
-     * @param \ProxyMarketApi\ProxyCollection\ProxyCollection $proxyCollection
+     * @param \ClientProxyMarketApi\ProxyCollection\ProxyCollection $proxyCollection
      * @param $expectedValue
      */
-    public function testIsEmpty(\ProxyMarketApi\ProxyCollection\ProxyCollection $proxyCollection, $expectedValue) {
+    public function testIsEmpty(\ClientProxyMarketApi\ProxyCollection\ProxyCollection $proxyCollection, $expectedValue) {
         $this->assertEquals($expectedValue, $proxyCollection->isEmpty());
     }
 
@@ -30,17 +30,17 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
      * Test diffrent case in getNumberOfElements method
      */
     public function testGetNumberOfElements() {
-        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $proxyCollectionObject = new \ClientProxyMarketApi\ProxyCollection\ProxyCollection();
         $this->assertEquals(0, $proxyCollectionObject->getNumberOfElements());
 
-        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $proxyCollectionObject->push(new \ClientProxyMarketApi\Proxy\Proxy('127.0.0.1'));
         $this->assertEquals(1, $proxyCollectionObject->getNumberOfElements());
 
         $proxyCollectionObject->pop();
         $this->assertEquals(0, $proxyCollectionObject->getNumberOfElements());
 
         for($i = 0; $i < 10; $i++) {
-            $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('192.168.1.23'));
+            $proxyCollectionObject->push(new \ClientProxyMarketApi\Proxy\Proxy('192.168.1.23'));
         }
         $this->assertEquals(10, $proxyCollectionObject->getNumberOfElements());
     }
@@ -49,11 +49,11 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
      * Push and Pop test methods
      */
     public function testPushAndPop() {
-        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $proxyCollectionObject = new \ClientProxyMarketApi\ProxyCollection\ProxyCollection();
         $this->assertFalse($proxyCollectionObject->pop());
         $this->assertEquals(0, $proxyCollectionObject->getNumberOfElements());
 
-        $proxyCollectionObject->push(new ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $proxyCollectionObject->push(new ClientProxyMarketApi\Proxy\Proxy('127.0.0.1'));
         $this->assertEquals(1, $proxyCollectionObject->getNumberOfElements());
 
         $proxyObject = $proxyCollectionObject->pop();
@@ -67,11 +67,11 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
      * GetCollection test method
      */
     public function testGetCollection() {
-        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $proxyCollectionObject = new \ClientProxyMarketApi\ProxyCollection\ProxyCollection();
         $this->assertEquals(array(), $proxyCollectionObject->getCollection());
         $this->assertEquals(0, count($proxyCollectionObject->getCollection()));
 
-        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $proxyCollectionObject->push(new \ClientProxyMarketApi\Proxy\Proxy('127.0.0.1'));
         $this->assertEquals(1, count($proxyCollectionObject->getCollection()));
     }
 
@@ -79,15 +79,15 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
      * FindProxyObjectsByIp test method
      */
     public function testFindProxyObjectsByIp() {
-        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $proxyCollectionObject = new \ClientProxyMarketApi\ProxyCollection\ProxyCollection();
         $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByIp('127.0.0.1'));
         $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByIp(''));
 
-        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $proxyCollectionObject->push(new \ClientProxyMarketApi\Proxy\Proxy('127.0.0.1'));
         $this->assertEquals(1, count($proxyCollectionObject->findProxyObjectsByIp('127.0.0.1')));
         $this->assertEquals('127.0.0.1', $proxyCollectionObject->findProxyObjectsByIp('127.0.0.1')[0]->getIp());
 
-        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $proxyCollectionObject->push(new \ClientProxyMarketApi\Proxy\Proxy('127.0.0.1'));
         $this->assertEquals(2, count($proxyCollectionObject->findProxyObjectsByIp('127.0.0.1')));
         $this->assertEquals('127.0.0.1', $proxyCollectionObject->findProxyObjectsByIp('127.0.0.1')[1]->getIp());
     }
@@ -96,23 +96,23 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
      * FindProxyObjectsByPort test method
      */
     public function testFindProxyObjectsByPort() {
-        $proxyCollectionObject = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
+        $proxyCollectionObject = new \ClientProxyMarketApi\ProxyCollection\ProxyCollection();
         $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByPort(80));
         $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByIp(''));
         $this->assertEquals(array(), $proxyCollectionObject->findProxyObjectsByIp('80'));
 
-        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1'));
+        $proxyCollectionObject->push(new \ClientProxyMarketApi\Proxy\Proxy('127.0.0.1'));
         $this->assertEquals(1, count($proxyCollectionObject->findProxyObjectsByPort('80')));
         $this->assertEquals(1, count($proxyCollectionObject->findProxyObjectsByPort(80)));
         $this->assertEquals(80, $proxyCollectionObject->findProxyObjectsByPort(80)[0]->getPort());
         $this->assertEquals('80', $proxyCollectionObject->findProxyObjectsByPort('80')[0]->getPort());
 
-        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1', 80));
+        $proxyCollectionObject->push(new \ClientProxyMarketApi\Proxy\Proxy('127.0.0.1', 80));
         $this->assertEquals(2, count($proxyCollectionObject->findProxyObjectsByPort('80')));
         $this->assertEquals(2, count($proxyCollectionObject->findProxyObjectsByPort(80)));
         $this->assertEquals(80, $proxyCollectionObject->findProxyObjectsByPort(80)[1]->getPort());
 
-        $proxyCollectionObject->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1', 8081));
+        $proxyCollectionObject->push(new \ClientProxyMarketApi\Proxy\Proxy('127.0.0.1', 8081));
         $this->assertEquals(1, count($proxyCollectionObject->findProxyObjectsByPort('8081')));
     }
 
@@ -120,15 +120,15 @@ class ProxyCollectionTest extends PHPUnit_Framework_TestCase {
      * @return array
      */
     public static function getProxyCollectionObjects() {
-        $proxyCollection = new \ProxyMarketApi\ProxyCollection\ProxyCollection();
-        $proxyCollection->push(new ProxyMarketApi\Proxy\Proxy('192.168.1.1'));
+        $proxyCollection = new \ClientProxyMarketApi\ProxyCollection\ProxyCollection();
+        $proxyCollection->push(new ClientProxyMarketApi\Proxy\Proxy('192.168.1.1'));
         $cloneProxyCollection = clone $proxyCollection;
         $proxyCollection->pop();
         return array(
-            array((new \ProxyMarketApi\ProxyCollection\ProxyCollection()), true),
+            array((new \ClientProxyMarketApi\ProxyCollection\ProxyCollection()), true),
             array(
-                (new \ProxyMarketApi\ProxyCollection\ProxyCollection())
-                    ->push(new \ProxyMarketApi\Proxy\Proxy('127.0.0.1')), false),
+                (new \ClientProxyMarketApi\ProxyCollection\ProxyCollection())
+                    ->push(new \ClientProxyMarketApi\Proxy\Proxy('127.0.0.1')), false),
             array($cloneProxyCollection, false),
             array($proxyCollection, true)
         );

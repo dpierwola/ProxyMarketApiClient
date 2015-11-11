@@ -6,10 +6,10 @@
  * Time: 21:29
  */
 
-namespace ProxyMarketApi\Proxy;
+namespace ClientProxyMarketApi\Proxy;
 
-use ProxyMarketApi\Proxy\Validators\IpValidator;
-use ProxyMarketApi\Proxy\Validators\IpPortValidator;
+use ClientProxyMarketApi\Proxy\Validators\IpValidator;
+use ClientProxyMarketApi\Proxy\Validators\IpPortValidator;
 
 
 class Proxy {

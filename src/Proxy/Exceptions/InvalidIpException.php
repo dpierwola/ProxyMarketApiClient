@@ -6,7 +6,7 @@
  * Time: 21:11
  */
 
-namespace ProxyMarketApi\Proxy\Exceptions;
+namespace ClientProxyMarketApi\Proxy\Exceptions;
 
 final class InvalidIpException extends \Exception {
 }

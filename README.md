@@ -2,7 +2,7 @@
 - Author: Dawid Pierwoła
 - Creation Date: 02.11.2015
 
-Simple PHP client for [Proxy Market.](http://www.proxymarket.pl/). It provide us proxy collection from ProxyMarket.
+Simple PHP client for [Proxy Market.](http://www.proxymarket.pl/) It provide us proxy collection from ProxyMarket.
 
 
 [![Latest Stable Version](https://img.shields.io/badge/ver.-1.0-blue.svg)

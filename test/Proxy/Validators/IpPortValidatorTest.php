@@ -5,10 +5,10 @@
  * Date: 06.11.15
  * Time: 15:18
  */
-namespace ProxyMarketApi\Tests\Proxy\Validators;
+namespace ClientProxyMarketApi\Tests\Proxy\Validators;
 
-use \ProxyMarketApi\Proxy\Exceptions\InvalidIpPortException;
-use \ProxyMarketApi\Proxy\Validators\IpPortValidator;
+use \ClientProxyMarketApi\Proxy\Exceptions\InvalidIpPortException;
+use \ClientProxyMarketApi\Proxy\Validators\IpPortValidator;
 
 class IpPortValidatorTest extends \PHPUnit_Framework_TestCase {
     /**
@@ -20,7 +20,7 @@ class IpPortValidatorTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider invalidIpPortDataProvider
-     * @expectedException \ProxyMarketApi\Proxy\Exceptions\InvalidIpPortException
+     * @expectedException \ClientProxyMarketApi\Proxy\Exceptions\InvalidIpPortException
      * @param $value
      * @throws InvalidIpPortException
      */

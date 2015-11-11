@@ -6,7 +6,7 @@
  * Time: 20:55
  */
 
-namespace ProxyMarketApi\Exceptions;
+namespace ClientProxyMarketApi\Exceptions;
 
 class InvalidApiRequest extends \Exception {
 }

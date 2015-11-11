@@ -6,8 +6,8 @@
  * Time: 22:57
  */
 
-namespace ProxyMarketApi\Tests\Proxy\Validators;
-use \ProxyMarketApi\Proxy\Validators\IpValidator;
+namespace ClientProxyMarketApi\Tests\Proxy\Validators;
+use \ClientProxyMarketApi\Proxy\Validators\IpValidator;
 
 class IpValidatorTest extends \PHPUnit_Framework_TestCase {
     /**
@@ -19,7 +19,7 @@ class IpValidatorTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider invalidIpDataProvider
-     * @expectedException \ProxyMarketApi\Proxy\Exceptions\InvalidIpException
+     * @expectedException \ClientProxyMarketApi\Proxy\Exceptions\InvalidIpException
      * @param $value
      */
     public function testValidTrowException($value) {
