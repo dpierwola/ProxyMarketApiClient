@@ -9,7 +9,7 @@
 include dirname(__FILE__) . '/../vendor/autoload.php';
 
 try {
-    $clientProxyMarket = new ClientProxyMarketApi\ClientProxyMarketApi('xxxxxxxxxxxxxxxxxxxxxxxxxxx', new \Curl\Curl());
+    $clientProxyMarket = new ProxyMarketApiClient\ProxyMarketApiClient('xxxxxxxxxxxxxxxxxxxxxxxxxxx', new \Curl\Curl());
     $proxyCollection = $clientProxyMarket->getProxyCollection();
 
     while($proxy = $proxyCollection->pop()) {

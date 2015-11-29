@@ -6,11 +6,15 @@
  * Time: 23:24
  */
 
-namespace ClientProxyMarketApi\Tests\Proxy;
+namespace ProxyMarketApiClient\Tests\Proxy;
 
-use ClientProxyMarketApi\Proxy\Proxy;
-use ClientProxyMarketApi\Proxy\Validators\IpPortValidator;
+use ProxyMarketApiClient\Proxy\Proxy;
+use ProxyMarketApiClient\Proxy\Validators\IpPortValidator;
 
+/**
+ * Class ProxyTest
+ * @package ProxyMarketApiClient\Tests\Proxy
+ */
 class ProxyTest extends \PHPUnit_Framework_TestCase {
     /**
      * @dataProvider getProxiesObjects
@@ -25,7 +29,7 @@ class ProxyTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider getInvalidIpDataProvider
-     * @expectedException \ClientProxyMarketApi\Proxy\Exceptions\InvalidIpException
+     * @expectedException \ProxyMarketApiClient\Proxy\Exceptions\InvalidIpException
      * @param $invalidIp
      */
     public function testCreateProxyObjectWithInvalidIp($invalidIp) {
@@ -34,7 +38,7 @@ class ProxyTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider getInvalidIpPortDataProvider
-     * @expectedException \ClientProxyMarketApi\Proxy\Exceptions\InvalidIpPortException
+     * @expectedException \ProxyMarketApiClient\Proxy\Exceptions\InvalidIpPortException
      * @param $invalidIpPort
      */
     public function testCreateProxyObjectWithInvalidIpPort($invalidIpPort) {
@@ -94,5 +98,4 @@ class ProxyTest extends \PHPUnit_Framework_TestCase {
             array(IpPortValidator::MAX_RANGE_IP_PORT + 1)
         );
     }
-
 }

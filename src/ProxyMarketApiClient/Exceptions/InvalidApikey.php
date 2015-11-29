@@ -6,7 +6,11 @@
  * Time: 00:06
  */
 
-namespace ClientProxyMarketApi\Exceptions;
+namespace ProxyMarketApiClient\Exceptions;
 
+/**
+ * Class InvalidApiKey
+ * @package ProxyMarketApiClient\Exceptions
+ */
 class InvalidApiKey extends \Exception {
 }

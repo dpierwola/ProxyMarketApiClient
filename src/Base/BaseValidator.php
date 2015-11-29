@@ -6,8 +6,16 @@
  * Time: 20:49
  */
 
-namespace ClientProxyMarketApi\Base;
+namespace ProxyMarketApiClient\Base;
 
+/**
+ * Class Validators
+ * @package ProxyMarketApiClient\Base
+ */
 abstract class Validators {
+    /**
+     * @param $value
+     * @return boolean
+     */
     abstract function valid($value);
 }

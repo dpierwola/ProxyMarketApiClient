@@ -6,11 +6,15 @@
  * Time: 20:17
  */
 
-namespace ClientProxyMarketApi\ClientProxyMarketApi\Validators;
+namespace ProxyMarketApiClient\ProxyMarketApiClient\Validators;
 
-use ClientProxyMarketApi\Exceptions\InvalidApiKey;
+use ProxyMarketApiClient\Exceptions\InvalidApiKey;
 
-class ApiKeyValidator extends \ClientProxyMarketApi\Base\Validators {
+/**
+ * Class ApiKeyValidator
+ * @package ProxyMarketApiClient\ProxyMarketApiClient\Validators
+ */
+class ApiKeyValidator extends \ProxyMarketApiClient\Base\Validators {
 
     /**
      * @param $value

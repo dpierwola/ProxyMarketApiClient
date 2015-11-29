@@ -5,16 +5,16 @@
  * Date: 02.11.15
  * Time: 23:50
  */
-namespace ClientProxyMarketApi;
+namespace ProxyMarketApiClient;
 
-use ClientProxyMarketApi\ClientProxyMarketApi\Validators\ApiKeyValidator;
-use ClientProxyMarketApi\ClientProxyMarketApi\Validators\ApiResponseValidator;
-use ClientProxyMarketApi\ProxyCollection\ProxyCollection;
+use ProxyMarketApiClient\ProxyMarketApiClient\Validators\ApiKeyValidator;
+use \ProxyMarketApiClient\ProxyMarketApiClient\Validators\ApiResponseValidator;
+use ProxyMarketApiClient\ProxyCollection\ProxyCollection;
 use Curl\Curl;
-use ClientProxyMarketApi\Exceptions\InvalidApiKey;
-use ClientProxyMarketApi\Exceptions\InvalidApiRequest;
+use ProxyMarketApiClient\Exceptions\InvalidApiKey;
+use ProxyMarketApiClient\Exceptions\InvalidApiRequest;
 
-class ClientProxyMarketApi {
+class ProxyMarketApiClient {
     /**
      * @const PROXY_MARKER_API_URL
      */

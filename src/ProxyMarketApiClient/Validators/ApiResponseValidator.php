@@ -6,11 +6,15 @@
  * Time: 20:30
  */
 
-namespace ClientProxyMarketApi\ClientProxyMarketApi\Validators;
+namespace ProxyMarketApiClient\ProxyMarketApiClient\Validators;
 
-use ClientProxyMarketApi\Exceptions\InvalidApiResponse;
+use ProxyMarketApiClient\Exceptions\InvalidApiResponse;
 
-class ApiResponseValidator extends \ClientProxyMarketApi\Base\Validators {
+/**
+ * Class ApiResponseValidator
+ * @package ProxyMarketApiClient\ProxyMarketApiClient\Validators
+ */
+class ApiResponseValidator extends \ProxyMarketApiClient\Base\Validators {
     /**
      * @const INVALID_RESPONSE_PATTERN
      */

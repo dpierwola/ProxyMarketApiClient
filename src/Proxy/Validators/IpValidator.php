@@ -6,11 +6,15 @@
  * Time: 20:50
  */
 
-namespace ClientProxyMarketApi\Proxy\Validators;
+namespace ProxyMarketApiClient\Proxy\Validators;
 
-use ClientProxyMarketApi\Proxy\Exceptions\InvalidIpException;
+use ProxyMarketApiClient\Proxy\Exceptions\InvalidIpException;
 
-class IpValidator extends \ClientProxyMarketApi\Base\Validators {
+/**
+ * Class IpValidator
+ * @package ProxyMarketApiClient\Proxy\Validators
+ */
+class IpValidator extends \ProxyMarketApiClient\Base\Validators {
     /**
      * @param $ip
      * @return bool
