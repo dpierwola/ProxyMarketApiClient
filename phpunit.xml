@@ -9,5 +9,9 @@
         <testsuite name="ProxyCollectionTest">
             <file>test/ProxyCollection/ProxyCollectionTest.php</file>
         </testsuite>
+        <testsuite name="ProxyMarketApiClientTest">
+            <file>test/ProxyMarketApiClient/Validators/ApiKeyValidatorTest.php</file>
+            <file>test/ProxyMarketApiClient/Validators/ApiResponseValidatorTest.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>
