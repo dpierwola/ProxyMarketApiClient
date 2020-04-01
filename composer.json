@@ -3,7 +3,7 @@
         "phpunit/phpunit": "5.0.*"
     },
     "require": {
-        "php-curl-class/php-curl-class": "^4.8"
+        "php-curl-class/php-curl-class": "^8.7"
     },
     "autoload": {
       "classmap": [
