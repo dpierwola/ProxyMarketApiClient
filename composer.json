@@ -1,6 +1,6 @@
 {
     "require-dev": {
-        "phpunit/phpunit": "5.0.*"
+        "phpunit/phpunit": "9.3.*"
     },
     "require": {
         "php-curl-class/php-curl-class": "^4.8"
